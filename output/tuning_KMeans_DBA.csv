@@ -1,0 +1,2 @@
+﻿Metode,params,Jumlah_Cluster,Jumlah_Noise,Coverage,Anggota_Min,Anggota_Max,Silhouette_FastDTW,DBI_Medoid_FastDTW,DBI_MinMax_Euclidean,CHI_MinMax_Euclidean,Eta2_Minggu_Nol,Runtime_Algoritma_s,Iterasi,Objektif,Tersaring,Skor_Multi_Indeks
+KMeans_DBA,"{""n_clusters"": 2}",2,0,1.0,250,561,0.34680431311603926,1.3105402554372134,1.6837332463501633,240.0774219953902,0.8152543077816254,2.1952149999997346,10,1184.0455747578567,True,1.0

@@ -1,0 +1,7 @@
+﻿Metode,Stabilitas_ARI,Stabilitas_NMI,Status
+KMeans_DBA,0.8297820088797122,0.7636031775209998,Uji 3 seed
+KMedoids,0.9576213238911976,0.9171744152060238,Uji 3 seed
+Agglomerative,,,Deterministik; uji seed tidak diperlukan
+DBSCAN,,,Deterministik; uji seed tidak diperlukan
+FuzzyCMeans,0.5874940538227794,0.489495311772743,Uji 3 seed
+FuzzyCMedoids,0.5852186090378878,0.5764344443813106,Uji 3 seed

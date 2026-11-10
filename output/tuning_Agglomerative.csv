@@ -1,0 +1,3 @@
+﻿Metode,params,Jumlah_Cluster,Jumlah_Noise,Coverage,Anggota_Min,Anggota_Max,Silhouette_FastDTW,DBI_Medoid_FastDTW,DBI_MinMax_Euclidean,CHI_MinMax_Euclidean,Eta2_Minggu_Nol,Runtime_Algoritma_s,Iterasi,Objektif,Linkage,Tersaring,Skor_Multi_Indeks
+Agglomerative,"{""linkage_method"": ""average"", ""n_clusters"": 2}",2,0,1.0,11,800,0.3004636757604395,1.1473194826285629,4.500160473296222,2.8842731422477637,0.01900041335866044,0.06177279999246821,810,,average,True,0.8375
+Agglomerative,"{""linkage_method"": ""complete"", ""n_clusters"": 2}",2,0,1.0,312,499,0.3246831183170611,1.2604827879290894,1.6308341792192882,285.9190954889547,0.8084020668827009,0.05482130000018515,810,,complete,True,0.6625

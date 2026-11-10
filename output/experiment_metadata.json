@@ -1,0 +1,114 @@
+{
+  "created_at_utc": "2026-11-10T04:44:19.209739+00:00",
+  "source_file": "C:\\Users\\Tsaqif\\Downloads\\Clustering ADL\\coba\\Ruang_Sales_Analysis Dashboard Styled\\dataset\\sales.csv",
+  "source_sha256": "ce434fa97b3ef7325e493bc9569cc8d0bba8eaa8df502144b251d2a3bc4e3ef3",
+  "n_products": 811,
+  "n_weeks": 52,
+  "total_sales": 375287.0,
+  "zero_observation_share": 0.2821540358531727,
+  "preprocessing": "Row-wise MinMaxScaler on original W0-W51 for each product",
+  "distance": {
+    "name": "Numba multiresolution FastDTW",
+    "radius": 2,
+    "local_cost": "squared_difference",
+    "final_distance": "sqrt(sum of squared local costs on the alignment path)",
+    "cache_file": "C:\\Users\\Tsaqif\\Downloads\\Clustering ADL\\coba\\Ruang_Sales_Analysis Dashboard Styled\\output\\distance_cache\\fastdtw_2c6031e3e918381b_r2.npy",
+    "cache_hit": true
+  },
+  "methods": [
+    "KMeans_DBA",
+    "KMedoids",
+    "Agglomerative",
+    "DBSCAN",
+    "FuzzyCMeans",
+    "FuzzyCMedoids"
+  ],
+  "best_method": "Agglomerative",
+  "selection_status": "PASS_SHAPE_GUARDRAIL",
+  "selection_warnings": [
+    "Lolos guardrail eta-squared bukan bukti validitas eksternal; interpretasi bisnis tetap perlu divalidasi."
+  ],
+  "best_parameters": {
+    "KMeans_DBA": {
+      "n_clusters": 2
+    },
+    "KMedoids": {
+      "n_clusters": 2
+    },
+    "Agglomerative": {
+      "n_clusters": 2,
+      "linkage_method": "average"
+    },
+    "DBSCAN": {
+      "min_samples": 7,
+      "eps": 0.9770108928115545,
+      "eps_quantile": 0.4
+    },
+    "FuzzyCMeans": {
+      "n_clusters": 2,
+      "fuzziness": 2.0
+    },
+    "FuzzyCMedoids": {
+      "n_clusters": 2,
+      "fuzziness": 2.0
+    }
+  },
+  "analysis_config": {
+    "random_state": 42,
+    "minmax_axis": "per_product",
+    "minmax_feature_range": [
+      0.0,
+      1.0
+    ],
+    "k_grid": [
+      2
+    ],
+    "linkage_grid": [
+      "average",
+      "complete"
+    ],
+    "dbscan_min_samples_grid": [
+      4,
+      7,
+      15,
+      25
+    ],
+    "dbscan_eps_quantiles": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.55,
+      0.75,
+      0.93
+    ],
+    "fuzzy_m_grid": [
+      1.7,
+      2.0
+    ],
+    "silhouette_tuning_sample_size": 350,
+    "min_cluster_share": 0.01,
+    "min_coverage_primary": 1.0,
+    "shape_max_eta_zero": 0.1,
+    "stability_ari_min": 0.75
+  },
+  "versions": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1",
+    "numba": "0.68.1",
+    "plotly": "7.1.0",
+    "joblib": "1.6.0"
+  },
+  "notes": [
+    "Clustering memakai W0-W51 asli yang ditransformasikan dengan Min-Max per produk.",
+    "Volume, kontribusi, jumlah minggu nol, dan profil bisnis dihitung dari data asli.",
+    "PCA hanya visualisasi dan tidak digunakan untuk menghitung cluster.",
+    "Silhouette/DBI/CHI adalah indeks internal, bukan akurasi prediksi.",
+    "DBI_Medoid_FastDTW merupakan adaptasi berbasis medoid, bukan DBI standar.",
+    "DBSCAN dapat memberi label -1 untuk produk noise; coverage harus diperhatikan.",
+    "Jika tidak ada model full-coverage yang lolos guardrail eta-squared minggu nol, pemimpin skor dilaporkan sebagai fallback, bukan rekomendasi final."
+  ]
+}
